@@ -1,6 +1,10 @@
+/* === Общие стили для всего сайта === */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: "Inter", sans-serif;
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   color: #222;
   transition: all 0.3s ease;
@@ -18,15 +22,16 @@ header {
 }
 
 header h1 {
+  font-family: "Playfair Display", serif;
   font-size: 22px;
   margin: 0;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 10px;
   font-weight: 500;
   transition: 0.3s;
 }
@@ -42,6 +47,16 @@ main {
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 0.6s ease;
+}
+
+h2, h3 {
+  color: #0d47a1;
+  font-family: "Playfair Display", serif;
+}
+
+ul, ol {
+  line-height: 1.8em;
 }
 
 footer {
@@ -55,22 +70,16 @@ footer {
   border-top-right-radius: 16px;
 }
 
-h2, h3 {
-  color: #0d47a1;
-}
-
-ul, ol {
-  line-height: 1.8em;
-}
-
-section {
-  display: none;
-}
-section.active {
-  display: block;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
   nav a {
     display: block;
     margin: 8px 0;
